@@ -11,9 +11,13 @@ use at_dos::println;
 pub extern "C" fn _start() -> ! {
     println!("Hello World{}", "!");
 
+    at_dos::init();
+
+    // as before
     #[cfg(test)]
     test_main();
 
+    println!("It did not crash!");
     loop {}
 }
 
